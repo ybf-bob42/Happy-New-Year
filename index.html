@@ -1,68 +1,137 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
- <title>Happy New Year</title>
- <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year</title>
+    <style>
+        /* Сброс стандартных отступов и базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             background-image: url('./img/елка.jpeg');
-            background-size: 100% 100%;
+            background-size: cover; /* Изменено с 100% 100% для лучшего отображения */
             background-repeat: no-repeat;
             background-position: center;
             background-attachment: fixed;
-            margin: 0;
-            padding: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Скрываем горизонтальный скролл */
         }
+        
+        /* Общие стили для всех кликабельных картинок */
+        .clickable-image {
+            position: absolute;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            user-drag: none;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .clickable-image:hover {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 0 10px gold);
+        }
+        
+        /* Отдельные позиции для каждой картинки */
         .sock {
-         -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-user-drag: none;
-        -khtml-user-drag: none;
-        -moz-user-drag: none;
-        -o-user-drag: none;
-        user-drag: none;
-        transition: transform 0.3s;
+            left: 1100px;
+            top: 320px;
+            width: 6%;
         }
-        .sock:hover {
-        transform: scale(1.1) rotate(5deg);
-        opacity: 0.9;
-        filter: drop-shadow(0 0 10px gold);
+        
+        .gift {
+            left: 170px;
+            top: 630px;
+            width: 13%;
         }
+        
+        .candle {
+            left: 1280px;
+            top: 100px;
+            width: 4%;
+        }
+        
+        .frame {
+            left: 650px;
+            top: 1px;
+            width: 25%;
+            cursor: default; /* Рамка не кликабельна */
+        }
+        
+        .frame:hover {
+            transform: none; /* Убираем анимацию при наведении на рамку */
+            filter: none;
+        }
+        
+        /* Стили для ссылок */
         a {
             text-decoration: none;
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            display: inline-block;
+        }
+        
+        /* Для неактивной ссылки (рамка) */
+        a:not([href]) {
+            cursor: default;
+        }
+        
+        /* Медиа-запрос для адаптивности (опционально) */
+        @media (max-width: 1600px) {
+            .sock { left: 900px; }
+            .candle { left: 1100px; }
+        }
+        
+        @media (max-width: 1200px) {
+            .sock { left: 700px; }
+            .candle { left: 900px; }
+            .frame { left: 500px; }
         }
     </style>
 </head>
 <body>
- <a href="https://avatars.mds.yandex.net/get-shedevrum/11079990/8c3e4be0b1a111eeb9effac5ed247044/orig">
-    <img src="./img/nosok.png" alt="nosok" 
-         style="position: relative; left: 1100px; top: 320px;"
-         width="6%"
-         class="sock">
-</a> <!-- носок -->
- <a href="https://galerey-room.ru/images/001416_1419369256.png">
-    <img src="./img/podarok.png" alt="podarok" 
-         style="position: relative; left: 170px; top: 630px;"
-         width="13%"
-         class="sock">
-</a> <!-- подарок -->
- <a href="https://cbr.ru/StaticHtml/File/96637/5r_97_rv.jpg">
-    <img src="img/svecha.png" 
-         style="position: relative; left: 1280px; top: 100px;"
-         width="4%"
-         class="sock">
-</a> <!-- свеча -->
-<a>
+    <!-- Новогодний носок -->
+    <a href="https://avatars.mds.yandex.net/get-shedevrum/11079990/8c3e4be0b1a111eeb9effac5ed247044/orig" 
+       target="_blank">
+        <img src="./img/nosok.png" 
+             alt="Новогодний носок с подарками" 
+             class="clickable-image sock">
+    </a>
+    
+    <!-- Подарок -->
+    <a href="https://galerey-room.ru/images/001416_1419369256.png" 
+       target="_blank">
+        <img src="./img/podarok.png" 
+             alt="Новогодний подарок" 
+             class="clickable-image gift">
+    </a>
+    
+    <!-- Свеча -->
+    <a href="https://cbr.ru/StaticHtml/File/96637/5r_97_rv.jpg" 
+       target="_blank">
+        <img src="img/svecha.png" 
+             alt="Новогодняя свеча" 
+             class="clickable-image candle">
+    </a>
+    
+    <!-- Рамка (без ссылки) -->
     <img src="img/ramka.png"
-         style="position: relative; left: 650px; top: 1px;"
-         width="25%">
- </a> <!-- рамка -->
+         alt="Новогодняя рамка"
+         class="clickable-image frame">
 </body>
 </html>
+
 
 
 
