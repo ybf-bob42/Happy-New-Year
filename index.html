@@ -12,14 +12,28 @@
             padding: 0;
         }
         .sock {
+         -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-drag: none;
         transition: transform 0.3s;
         }
         .sock:hover {
-        transform: scale(1.1);
+        transform: scale(1.1) rotate(5deg);
+        opacity: 0.9;
         filter: drop-shadow(0 0 10px gold);
         }
         a {
             text-decoration: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
     </style>
 </head>
@@ -33,6 +47,7 @@
  <h1></h1>
 </body>
 </html>
+
 
 
 
