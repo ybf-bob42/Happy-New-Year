@@ -93,10 +93,42 @@
             .candle { left: 1100px; }
         }
         
-        @media (max-width: 1200px) {
-            .sock { left: 700px; }
-            .candle { left: 900px; }
-            .frame { left: 500px; }
+        @media (max-width: 768px) {
+            body {
+                background-size: 100% 100%;
+                background-position: center;
+            }
+            
+            .sock {
+                left: 50% !important;
+                top: 70% !important;
+                width: 25% !important;
+                transform: translateX(-50%);
+            }
+            
+            .gift {
+                left: 20% !important;
+                top: 80% !important;
+                width: 30% !important;
+            }
+            
+            .candle {
+                left: 75% !important;
+                top: 20% !important;
+                width: 15% !important;
+            }
+            
+            .frame {
+                left: 50% !important;
+                top: 10% !important;
+                width: 80% !important;
+                transform: translateX(-50%);
+            }
+            
+            .clickable-image:hover {
+                transform: scale(1.05) rotate(3deg);
+            }
+        }
         }
     </style>
 </head>
@@ -131,6 +163,7 @@
          class="clickable-image frame">
 </body>
 </html>
+
 
 
 
